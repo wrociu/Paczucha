@@ -1,3 +1,13 @@
+html {
+  height: 100%;
+}
+
+.hor-center {
+  width: 100%;
+  text-align: center;  /* align the inline(-block) elements horizontally */
+  
+}
+
 body {
   font-family: Arial, sans-serif;
     position:relative;
@@ -5,6 +15,7 @@ body {
     height:100%;    
     margin:0;
     font-family: sans-serif;
+
 }
 
 
