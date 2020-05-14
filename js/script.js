@@ -117,7 +117,7 @@ function printCheckboxesToClick(packageName, step, description)
   
   var input = document.createElement("input");
   input.type = "checkbox";
-  input.name = idk;
+  input.name = packageName;
   input.id = idk;
   input.onclick = function(){ ValidatePackages(this, packageName); };
   
@@ -139,8 +139,35 @@ function printCheckboxesToClick(packageName, step, description)
 
 function ValidatePackages(checkedEl, idToCheck)
 { 
-  console.log(checkedEl.checked);
-  if (checkedEl.checked)
+  
+  console.log("name: " + checkedEl.name);
+
+  // count checked for the package
+  var checkedCount = 0;
+  var checkboxes = document.getElementById("checkboxesToClick"); 
+  var inputElems = checkboxes.getElementsByTagName("input"); 
+
+  for (var i=0; i<inputElems.length; i++) 
+  {       
+    if (inputElems[i].type == "checkbox" && inputElems[i].checked == true && inputElems[i].name == checkedEl.name)
+      { checkedCount++; }      
+  } 
+  console.log("checked: " + checkedCount + "  for the package: " + checkedEl.name);
+
+  // count all for the package
+  var allCount = 0;
+  var checkboxes = document.getElementById("checkboxesToClick"); 
+  var inputElems = checkboxes.getElementsByTagName("input");  
+
+  for (var i=0; i<inputElems.length; i++) 
+  {       
+    if (inputElems[i].type == "checkbox" && inputElems[i].name == checkedEl.name)
+      { allCount++; }      
+  }
+  console.log("all: " + allCount + "  for the package: " + checkedEl.name); 
+
+
+  if (checkedCount == allCount)
     {document.getElementById(idToCheck).checked = true;}
   else
     {document.getElementById(idToCheck).checked = false;}
@@ -166,6 +193,8 @@ function CountCheckedCheckboxes()
   }  
   return count;
 }
+
+
 
 function CountCheckboxes()
 {
