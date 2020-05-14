@@ -1,0 +1,12 @@
+<INSTRUKCJA> 
+<PACZKA nazwa='BUG_1170_v4'> 
+<STEP>1</STEP> 
+<STEP_DESCRIPTION>Zainstaluje pakiety</STEP_DESCRIPTION> 
+<STEP>2</STEP> 
+<STEP_DESCRIPTION>Puśc skrypt konfiguracyjny</STEP_DESCRIPTION> 
+</PACZKA> 
+<PACZKA nazwa='CL_1787_Fix_v2'> 
+<STEP>1</STEP> 
+<STEP_DESCRIPTION>Puśc skrypt konfiguracyjny numer 2</STEP_DESCRIPTION> 
+</PACZKA> 
+</INSTRUKCJA>
